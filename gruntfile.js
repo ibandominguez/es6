@@ -6,7 +6,12 @@ module.exports = function(grunt){
     babel: {
       options: { sourceMap: true },
       dist: {
-        files: { 'dist/es5.js': 'src/es6.js' }
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['*.js'],
+          dest: 'dist/'
+        }]
       }
     }
   });
